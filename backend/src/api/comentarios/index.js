@@ -5,14 +5,20 @@ const router = express.Router();
 //Se crea un nuevo comentario
 router.post('/:id/comentario', async (req, res) => {
     try {
-        const newComment = req.body;
-        const result = await db.query('INSERT INTO roket.comentarios (arbol_id, postulante_id, comentario) VALUES ($1, $2, $3) RETURNING *', [newComment.arbol_id, 'SIFA328', newComment.comentario]);
-        res.json(result.rows[0]);
+        const { id } = req.params;
+        const { comentario } = req.body; 
+        // consulta SQL
+        const insertQuery = `
+            INSERT INTO roket.comentarios (arbol_id, postulante_id, comentario)
+            VALUES ($1, 'SIFA328', $2)
+        `;
+        // ejecutar la consulta SQL
+        await db.query(insertQuery, [id, comentario]);
+        res.status(200).json({ status: 'success', message: 'Comentario insertado correctamente' });
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: 'Error al crear el comentario' });
+        res.status(500).json({ status: 'error', message: 'Algo salió mal' });
     }
 });
-
 
 module.exports = router;
