@@ -1,0 +1,58 @@
+.app-container {
+    width: 99vw;
+    height: 90vh;
+}
+
+.title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 40px;
+    color: #757575;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
+.dropdown {
+    display: flex;
+    flex: 1;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 750px;
+}
+
+.photoview, .map, .comments {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.photoview {
+    padding-left:  10px;
+}
+
+.map{
+    max-height: 80%;
+}
+.comments{
+    margin-top: 10px;
+}
+@media screen and (max-width: 600px) {
+    .content-row {
+        flex-direction: column;
+    }
+
+    .photoview, .map, .comments {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

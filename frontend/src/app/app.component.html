@@ -1,0 +1,17 @@
+<div class="app-container">
+    <h1 class="title">Prueba tecnica portulación ROKET</h1>
+    <div class="dropdown">
+        <app-selector [items]="itemParsed" (itemsChange)="handleItemSeleccionado($event)"></app-selector>
+    </div>
+    <div class="content-row">
+        <div class="map" *ngIf="lat != 0 && lng != 0 && dataLoaded">
+            <app-mapcomponent [lat]="lat" [lng]="lng"></app-mapcomponent>
+            <div class="comments">
+                <app-textfield (messageEvent)="handleCommentsChange($event)"></app-textfield>
+            </div>
+        </div>
+        <div class="photoview" *ngIf="urls.length > 0 && dataLoaded">
+            <app-photoview [images]="urls"></app-photoview>
+        </div>
+    </div>
+</div>

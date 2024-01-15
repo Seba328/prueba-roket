@@ -1,0 +1,2 @@
+<textarea [(ngModel)]="message" rows="4" placeholder="Escribe un mensaje"></textarea>
+<button [disabled]="!message" (click)="sendMessage()">Enviar</button>

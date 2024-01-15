@@ -1,0 +1,25 @@
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  transition: 0.5s;
+}
+
+select:hover {
+  background-color: #f1f1f1;
+}
+
+option {
+  color: #757575;
+}
+
+option:hover {
+  color: #000000;
+  background-color: #f1f1f1;
+}
